@@ -6,13 +6,17 @@
     android:padding="16dp">
 
     <TextView android:id="@+id/tv_vehiculo_seleccionado"
-         android:layout_height="match_parent"
+         android:layout_height="wrap_content"
         android:layout_width="match_parent"
+        android:textSize="18sp"
+        android:layout_marginBottom="8dp"
         />
 
     <TextView android:id="@+id/tv_precio_dia"
-         android:layout_height="match_parent"
+         android:layout_height="wrap_content"
         android:layout_width="match_parent"
+        android:textSize="16sp"
+        android:layout_marginBottom="16dp"
         />
 
     <EditText
@@ -36,6 +40,6 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Confirmar Operación"
-        android:onClick="verResumen" />
+        android:onClick="verResumen"
+        android:text="Confirmar Operación" />
 </LinearLayout>
