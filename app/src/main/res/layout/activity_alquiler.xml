@@ -3,27 +3,29 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center"
-    android:padding="20dp">
+    android:padding="16dp">
 
-    <Button
-        android:id="@+id/btn_informacion"
+    <EditText
+        android:id="@+id/et_cliente"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Información de la App"
-        android:onClick="irAInformacion" />
+        android:hint="Apellido y Nombre" />
 
-    <Button
-        android:id="@+id/btn_categorias"
+    <Spinner
+        android:id="@+id/sp_pago"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/et_dias"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Categorías de Vehículos"
-        android:onClick="irACategorias" />
+        android:hint="Cantidad de días"
+        android:inputType="number" />
 
     <Button
-        android:id="@+id/btn_historial"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Ver Alquileres Registrados"
-        android:onClick="irAHistorial" />
+        android:text="Confirmar Operación"
+        android:onClick="verResumen" />
 </LinearLayout>

@@ -6,24 +6,21 @@
     android:gravity="center"
     android:padding="20dp">
 
-    <Button
-        android:id="@+id/btn_informacion"
+    <TextView
+        android:id="@+id/tv_resumen_datos"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Información de la App"
-        android:onClick="irAInformacion" />
+        android:textSize="18sp" />
 
     <Button
-        android:id="@+id/btn_categorias"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Categorías de Vehículos"
-        android:onClick="irACategorias" />
+        android:text="Guardar en Base de Datos"
+        android:onClick="confirmarYGuardar" />
 
     <Button
-        android:id="@+id/btn_historial"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Ver Alquileres Registrados"
-        android:onClick="irAHistorial" />
+        android:text="Cancelar"
+        android:onClick="cancelarAlquiler" />
 </LinearLayout>
