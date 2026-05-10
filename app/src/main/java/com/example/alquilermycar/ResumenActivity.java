@@ -21,6 +21,8 @@ public class ResumenActivity extends AppCompatActivity {
 
     private TextView tvResumen;
 
+    private int posicion;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +36,7 @@ public class ResumenActivity extends AppCompatActivity {
             cantidadDias = getIntent().getIntExtra("dias", 0);
             montoTotal = getIntent().getDoubleExtra("total", 0.0);
             metodoPago = getIntent().getStringExtra("pago");
+            posicion = getIntent().getIntExtra("position", 0);
             // 3. Crear el texto del resumen y mostrarlo
             String resumenText = "Resumen del Alquiler:\n\n" +
                     "Cliente: " + nombreCliente + "\n" +
@@ -62,7 +65,10 @@ public class ResumenActivity extends AppCompatActivity {
 
         if (resultado != -1) {
             Toast.makeText(this, "Alquiler Registrado", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent( this,DetalleVehiculoActivity.class);
+            intent.putExtra("posicion", posicion);
 
+            startActivity(intent);
             finish();
         } else {
             Toast.makeText(this, "Error al registrar", Toast.LENGTH_SHORT).show();
