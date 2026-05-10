@@ -42,4 +42,12 @@
         android:layout_height="wrap_content"
         android:onClick="verResumen"
         android:text="Confirmar Operación" />
+
+    <Button
+        android:id="@+id/btn_volver_atras"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Volver a la página anterior"
+        android:onClick="volverAtras" />
 </LinearLayout>

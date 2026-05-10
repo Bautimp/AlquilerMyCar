@@ -88,4 +88,9 @@ public class AlquilerActivity extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
+
+    // Método para volver a la pantalla inmediatamente anterior
+    public void volverAtras(View view) {
+        finish(); // Cierra la actividad actual
+    }
 }

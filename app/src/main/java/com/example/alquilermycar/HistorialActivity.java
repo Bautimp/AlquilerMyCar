@@ -3,6 +3,7 @@ package com.example.alquilermycar;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -41,5 +42,9 @@ public class HistorialActivity extends AppCompatActivity {
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, lista);
         listView.setAdapter(adapter);
         db.close();
+    }
+    // Método para volver a la pantalla inmediatamente anterior
+    public void volverAtras(View view) {
+        finish(); // Cierra la actividad actual
     }
 }

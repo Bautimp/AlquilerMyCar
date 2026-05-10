@@ -30,4 +30,8 @@ public class InfoActivity extends AppCompatActivity {
         startActivity(intent);
         finish(); // Cerramos Info para ir a Categorías
     }
+    // Método para volver a la pantalla inmediatamente anterior
+    public void volverAtras(View view) {
+        finish(); // Cierra la actividad actual
+    }
 }

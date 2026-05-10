@@ -19,7 +19,7 @@ public class VehiculosListaActivity extends AppCompatActivity {
     // Arreglo simulado con las imágenes de los vehículos en miniatura.
     // Para el TP, usamos los íconos por defecto como ejemplo (mínimo 4).
     public Integer[] imagenesVehiculos = {
-            R.mipmap.ic_launcher, R.mipmap.ic_launcher, R.mipmap.ic_launcher, R.mipmap.ic_launcher
+            R.drawable.auto1_min, R.drawable.auto2_min, R.drawable.auto3_min, R.drawable.auto4_min
     };
 
     @Override
@@ -99,5 +99,9 @@ public class VehiculosListaActivity extends AppCompatActivity {
             imageView.setImageResource(imagenesVehiculos[position]);
             return imageView;
         }
+    }
+    // Método para volver a la pantalla inmediatamente anterior
+    public void volverAtras(View view) {
+        finish(); // Cierra la actividad actual
     }
 }

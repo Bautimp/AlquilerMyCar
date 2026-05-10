@@ -51,4 +51,9 @@ public class CategoriasActivity extends AppCompatActivity {
     public void volverAlInicio(View v) {
         finish(); // Finaliza la actividad actual para regresar a la anterior
     }
+
+    // Método para volver a la pantalla inmediatamente anterior
+    public void volverAtras(View view) {
+        finish(); // Cierra la actividad actual
+    }
 }

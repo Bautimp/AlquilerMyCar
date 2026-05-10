@@ -68,4 +68,8 @@ public class ResumenActivity extends AppCompatActivity {
             Toast.makeText(this, "Error al registrar", Toast.LENGTH_SHORT).show();
         }
     }
+    // Método para volver a la pantalla inmediatamente anterior
+    public void volverAtras(View view) {
+        finish(); // Cierra la actividad actual
+    }
 }

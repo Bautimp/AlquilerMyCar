@@ -3,23 +3,35 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <LinearLayout
+        android:id="@+id/contenedor_botones"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <Button
+            android:id="@+id/btn_alquilar_actual"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Realizar Alquiler"
+            android:onClick="abrirFormularioAlquiler" />
+
+        <Button
+            android:id="@+id/btn_volver_atras"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Volver a la página anterior"
+            android:onClick="volverAtras" />
+
+    </LinearLayout>
+
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewPagerVehiculos"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_above="@id/contenedor_botones" />
 
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/pager_vehiculos"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
-    <Button
-        android:id="@+id/btn_alquilar_actual"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="20dp"
-        android:text="Realizar Alquiler"
-        android:onClick="abrirFormularioAlquiler" />
 </RelativeLayout>
