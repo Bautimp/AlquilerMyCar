@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:padding="20dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Información de MyCar"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="30dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Autor: Bautista\nVersión: 1.0\n\nDescripción: Aplicación para la gestión y simulación de alquiler de vehículos en la tienda MyCar."
+        android:textSize="16sp"
+        android:layout_marginBottom="40dp" />
+
+    <Button
+        android:id="@+id/btn_volver_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Volver a Inicio"
+        android:onClick="irAMain"
+        android:layout_marginBottom="10dp" />
+
+    <Button
+        android:id="@+id/btn_ir_categorias"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ver Categorías"
+        android:onClick="irACategorias" />
+
+</LinearLayout>

@@ -11,15 +11,30 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AlquilerMyCar">
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".InfoActivity" />
+
+        <activity android:name=".CategoriasActivity" />
+
+        <activity android:name=".VehiculosListaActivity" />
+
+        <activity android:name=".DetalleVehiculoActivity" />
+
+        <activity android:name=".AlquilerActivity" />
+
+        <activity android:name=".ResumenActivity" />
+
+        <activity android:name=".HistorialActivity" />
+
     </application>
 
 </manifest>

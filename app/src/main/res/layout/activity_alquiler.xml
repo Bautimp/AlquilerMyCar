@@ -5,6 +5,16 @@
     android:orientation="vertical"
     android:padding="16dp">
 
+    <TextView android:id="@+id/tv_vehiculo_seleccionado"
+         android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        />
+
+    <TextView android:id="@+id/tv_precio_dia"
+         android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        />
+
     <EditText
         android:id="@+id/et_cliente"
         android:layout_width="match_parent"

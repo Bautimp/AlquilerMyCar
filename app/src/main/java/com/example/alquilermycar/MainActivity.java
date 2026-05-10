@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void irACategorias(View v) {
-        startActivity(new Intent(this, CategoriasActivity.class)); // [cite: 1110, 4427]
+        startActivity(new Intent(this, CategoriasActivity.class));
     }
 
     public void irAInformacion(View v) {
