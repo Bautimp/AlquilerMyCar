@@ -16,7 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Guardar en Base de Datos"
-        android:onClick="confirmarYGuardar" />
+        android:onClick="guardarAlquiler" />
 
     <Button
         android:layout_width="match_parent"
