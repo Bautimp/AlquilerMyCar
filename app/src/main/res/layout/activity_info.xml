@@ -17,7 +17,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Autor: Bautista\nVersión: 1.0\n\nDescripción: Aplicación para la gestión y simulación de alquiler de vehículos en la tienda MyCar."
+        android:text="Autor: Fernando García y Juan Bautista Montes Pantano\nVersión: 1.0\n\nDescripción: Aplicación para la gestión y simulación de alquiler de vehículos en la tienda MyCar."
         android:textSize="16sp"
         android:layout_marginBottom="40dp" />
 
