@@ -1,53 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:fillViewport="true"
+android:background="#121212">
+
+<LinearLayout
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="24dp">
 
-    <TextView android:id="@+id/tv_vehiculo_seleccionado"
-         android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:textSize="18sp"
-        android:layout_marginBottom="8dp"
-        />
-
-    <TextView android:id="@+id/tv_precio_dia"
-         android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:textSize="16sp"
-        android:layout_marginBottom="16dp"
-        />
-
-    <EditText
-        android:id="@+id/et_cliente"
+    <TextView
+        android:id="@+id/tv_vehiculo_seleccionado"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Apellido y Nombre" />
+        android:text="Vehículo Seleccionado"
+        android:textColor="#FFFFFF"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="4dp" />
+
+    <TextView
+        android:id="@+id/tv_precio_dia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="$ 0.00 por día"
+        android:textColor="#FF9F43"
+        android:textSize="18sp"
+        android:layout_marginBottom="24dp" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Apellido y Nombre"
+        android:textColorHint="#888888"
+        app:hintTextColor="#00A8FF"
+        app:boxStrokeColor="#00A8FF"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_cliente"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Método de Pago"
+        android:textColor="#BBBBBB"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp" />
 
     <Spinner
         android:id="@+id/sp_pago"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="55dp"
+        android:backgroundTint="#FFFFFF"
+        android:layout_marginBottom="16dp" />
 
-    <EditText
-        android:id="@+id/et_dias"
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Cantidad de días"
-        android:inputType="number" />
+        android:textColorHint="#888888"
+        app:hintTextColor="#00A8FF"
+        app:boxStrokeColor="#00A8FF"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
-    <Button
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_dias"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:textColor="#FFFFFF" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="verResumen"
-        android:text="Confirmar Operación" />
+        android:layout_height="65dp"
+        android:layout_marginTop="32dp"
+        android:text="Confirmar Operación"
+        android:textSize="18sp"
+        android:textAllCaps="false"
+        app:cornerRadius="12dp"
+        android:backgroundTint="#FF9F43"
+        android:textColor="#121212"
+        android:onClick="verResumen" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_volver_atras"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Volver a la página anterior"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="20dp"
+        android:text="← Volver"
+        android:textColor="#FFFFFF"
         android:onClick="volverAtras" />
+
 </LinearLayout>
+</ScrollView>

@@ -1,29 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="#121212"> <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:gravity="center"
-    android:padding="20dp">
+    android:padding="32dp"
+    android:gravity="center">
 
-    <Button
-        android:id="@+id/btn_informacion"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Información de la App"
-        android:onClick="irAInformacion" />
+    <ImageView
+        android:id="@+id/img_logo"
+        android:layout_width="280dp"
+        android:layout_height="160dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="50dp"
+        android:src="@drawable/logo"
+        android:scaleType="fitCenter"
+        android:contentDescription="Logo Rent a Car" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_categorias"
+        style="@style/Widget.MaterialComponents.Button"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Categorías de Vehículos"
+        android:layout_height="75dp"
+        android:layout_marginBottom="20dp"
+        android:text="Alquilar un Vehículo"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:cornerRadius="16dp"
+        android:backgroundTint="#FF9F43"
+        android:textColor="#121212"
         android:onClick="irACategorias" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_historial"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Ver Alquileres Registrados"
+        android:layout_height="70dp"
+        android:layout_marginBottom="20dp"
+        android:text="Mis Alquileres"
+        android:textAllCaps="false"
+        android:textSize="17sp"
+        app:cornerRadius="16dp"
+        app:strokeColor="#00A8FF"
+        app:strokeWidth="2dp"
+        android:textColor="#00A8FF"
         android:onClick="irAHistorial" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_informacion"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Información de la App"
+        android:textColor="#BBBBBB"
+        android:onClick="irAInformacion" />
+
 </LinearLayout>
+</ScrollView>

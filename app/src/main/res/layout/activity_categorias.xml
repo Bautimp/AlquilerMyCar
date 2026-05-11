@@ -1,27 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:background="#212121"
+    android:padding="16dp">
 
     <TextView
+        android:id="@+id/titulo_categorias"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Seleccione una Categoría"
-        android:textSize="20sp"
+        android:text="Nuestras Categorías"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#FFFF"
         android:gravity="center"
-        android:padding="10dp" />
+        android:layout_marginBottom="20dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_volver_atras"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="35dp"
+        android:text="← Volver al Inicio"
+        android:textColor="@color/primary_blue"
+        app:strokeColor="@color/primary_blue"
+        app:cornerRadius="10dp"
+        android:onClick="volverAtras" />
 
     <ListView
         android:id="@+id/list_categorias"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="match_parent"
+        android:layout_below="@id/titulo_categorias"
+        android:layout_above="@id/btn_volver_atras"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="16dp"
+        android:layout_marginBottom="16dp"
+        android:scrollbarStyle="outsideOverlay" />
 
-    <Button
-        android:id="@+id/btn_volver_atras"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Volver a la página anterior"
-        android:onClick="volverAtras" />
-</LinearLayout>
+</RelativeLayout>

@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="#121212"
+    android:padding="8dp">
 
     <GridView
         android:id="@+id/grid_vehiculos"
@@ -11,17 +14,23 @@
         android:layout_weight="1"
         android:columnWidth="130dp"
         android:numColumns="auto_fit"
-        android:verticalSpacing="10dp"
-        android:horizontalSpacing="10dp"
+        android:verticalSpacing="15dp"
+        android:horizontalSpacing="15dp"
         android:stretchMode="columnWidth"
-        android:gravity="center" />
+        android:gravity="center"
+        android:padding="10dp" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_volver_atras"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:text="Volver a la página anterior"
+        android:layout_height="55dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="35dp"
+        android:text="← Volver al Inicio"
+        android:textColor="@color/primary_blue"
+        app:strokeColor="@color/primary_blue"
+        app:cornerRadius="10dp"
         android:onClick="volverAtras" />
 
 </LinearLayout>
