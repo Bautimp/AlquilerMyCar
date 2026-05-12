@@ -34,9 +34,9 @@
             android:layout_height="55dp"
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="35dp"
-            android:text="← Volver al Inicio"
-            android:textColor="@color/primary_blue"
-            app:strokeColor="@color/primary_blue"
+            android:text="← Volver"
+            android:textColor="#FFFFFF"
+            app:strokeColor="#FFFFFF"
             app:cornerRadius="10dp"
             android:onClick="volverAtras" />
 
