@@ -115,7 +115,6 @@ public class DetalleVehiculoActivity extends AppCompatActivity {
 
         }
 
-
     }
 
     // Botón para iniciar el proceso de alquiler desde el detalle

@@ -20,7 +20,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Autor: Fernando García y Juan Bautista Montes Pantano\nVersión: 1.0\n\nDescripción: Aplicación para la gestión y simulación de alquiler de vehículos en la tienda MyCar."
+        android:text="Autor: Fernando García y Juan Bautista Montes Pantano\nDescripción: Aplicación para la gestión y simulación de alquiler de vehículos en la tienda MyCar."
         android:textSize="17sp"
         android:textColor="#BBBBBB"
         android:lineSpacingExtra="4dp"
@@ -39,5 +39,16 @@
         android:textAllCaps="false"
         android:textColor="#BBBBBB"
         android:onClick="volverAtras" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_irACategorias"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Ir a categorías"
+        android:textAllCaps="false"
+        android:textColor="#BBBBBB"
+        android:onClick="irACategorias" />
 
 </LinearLayout>
