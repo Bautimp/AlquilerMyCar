@@ -2,106 +2,188 @@ package com.example.alquilermycar;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 public class VehiculosListaActivity extends AppCompatActivity {
 
-    private GridView gridVehiculos;
+    public static int mSelected = 0;
+    private GridView gridView;
     private String categoriaSeleccionada;
 
-    // Arreglo simulado con las imágenes de los vehículos en miniatura.
-    // Para el TP, usamos los íconos por defecto como ejemplo (mínimo 4).
-    public Integer[] imagenesVehiculos = {
-            R.drawable.auto1_min, R.drawable.auto2_min, R.drawable.auto3_min, R.drawable.auto4_min
+    public static Integer[] imagenesVehiculos = {
+            R.drawable.auto1_min,
+            R.drawable.auto2_min,
+            R.drawable.auto3_min,
+            R.drawable.auto4_min
     };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_vehiculos_lista);
 
-        gridVehiculos = findViewById(R.id.grid_vehiculos);
+        setContentView(R.layout.galeria_imagenes);
 
-        // Recibir la categoría del Intent para mostrar en el título
+        gridView = (GridView) findViewById(R.id.gridview_galeria);
+
+        gridView.setAdapter(new imageAdapter(this));
+
+        gridView.setSelection(mSelected);
+
         categoriaSeleccionada = getIntent().getStringExtra("CATEGORIA");
+
         if (categoriaSeleccionada != null) {
+
             setTitle("Vehículos: " + categoriaSeleccionada);
+
         }
-
-        // Asignar el adaptador al GridView
-        gridVehiculos.setAdapter(new VehiculoAdapter(this));
-
-        // Click en la miniatura para abrir la pantalla de Detalle/Swipe
-        gridVehiculos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(VehiculosListaActivity.this, DetalleVehiculoActivity.class);
-                intent.putExtra("posicion", position);
-                intent.putExtra("CATEGORIA", categoriaSeleccionada);
-                startActivity(intent);
-            }
-        });
     }
 
-    // Funciones de navegación requeridas por el TP
     public void volverACategorias(View v) {
-        finish(); // Vuelve a la pantalla anterior
+
+        finish();
+
     }
 
     public void volverAlInicio(View v) {
+
         Intent intent = new Intent(this, MainActivity.class);
+
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
         startActivity(intent);
-        finish(); // Destruye esta actividad y vuelve al Home
+
+        finish();
+
     }
 
-    // Adaptador interno para el GridView (como en el Ejercicio 3)
-    public class VehiculoAdapter extends BaseAdapter {
+    public void volverAtras(View view) {
+
+        finish();
+
+    }
+
+    public class imageAdapter extends BaseAdapter {
+
         private Context mContexto;
 
-        public VehiculoAdapter(Context c) {
+        public imageAdapter(Context c) {
+
             mContexto = c;
+
         }
 
         @Override
         public int getCount() {
-            return imagenesVehiculos.length; // Retorna la cantidad de miniaturas
+
+            return imagenesVehiculos.length;
+
         }
 
         @Override
         public Object getItem(int position) {
+
             return null;
+
         }
 
         @Override
         public long getItemId(int position) {
+
             return 0;
+
         }
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
+
             ImageView imageView;
+
             if (convertView == null) {
+
                 imageView = new ImageView(mContexto);
-                imageView.setLayoutParams(new GridView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 300));
+
+                imageView.setLayoutParams(
+                        new GridView.LayoutParams(
+                                ViewGroup.LayoutParams.MATCH_PARENT,
+                                130
+                        )
+                );
+
                 imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-                imageView.setPadding(8, 8, 8, 8);
+
+                imageView.setCropToPadding(true);
+
+                imageView.setPadding(2,2,2,2);
+
             } else {
+
                 imageView = (ImageView) convertView;
+
             }
-            imageView.setImageResource(imagenesVehiculos[position]);
+
+            imageView.setImageResource(
+                    VehiculosListaActivity.imagenesVehiculos[position]
+            );
+
+            imageView.setOnClickListener(new View.OnClickListener() {
+
+                @Override
+                public void onClick(View v) {
+
+                    mSelected = (Integer) v.getTag();
+
+                    notifyDataSetChanged();
+
+                    String index = String.valueOf(position);
+
+                    Bundle extras = new Bundle();
+
+                    extras.putString("position", index);
+
+                    Intent in = new Intent(
+                            mContexto,
+                            DetalleVehiculoActivity.class
+                    ).putExtras(extras);
+
+                    mContexto.startActivity(in);
+
+                }
+            });
+
+            try {
+
+                imageView.setTag(position);
+
+                if (position == mSelected) {
+
+                    imageView.setBackgroundColor(
+                            Color.parseColor("#ff6203")
+                    );
+
+                } else {
+
+                    imageView.setBackgroundColor(
+                            Color.TRANSPARENT
+                    );
+
+                }
+
+            } catch (Exception e) {
+
+                e.printStackTrace();
+
+            }
+
             return imageView;
         }
-    }
-    // Método para volver a la pantalla inmediatamente anterior
-    public void volverAtras(View view) {
-        finish(); // Cierra la actividad actual
     }
 }

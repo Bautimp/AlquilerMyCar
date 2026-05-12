@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/galeria_imagenes"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scaleType="fitXY"/>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:background="@android:color/transparent"
+        android:layout_width="fill_parent"
+        android:layout_alignParentTop="true"
+        android:layout_height="100dp">
+
+        <TextView
+            android:id="@+id/swipe_descripcion"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:gravity="center"
+            android:padding="10dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+        android:layout_width="fill_parent"
+        android:layout_height="60dp">
+
+        <TextView
+            android:id="@+id/imagen_descripcion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="Descripción de la Imagen"/>
+    </LinearLayout>
+
+</RelativeLayout>
