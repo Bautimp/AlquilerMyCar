@@ -128,4 +128,15 @@ public class DetalleVehiculoActivity extends AppCompatActivity {
         intent.putExtra("position", posicionActual);
         startActivity(intent);
     }
+
+    // modificar el botón de volver para vaciar la memoria primero
+    public void volverAtras(View view) {
+        if (newsPager != null) {
+            newsPager.setAdapter(null);
+        }
+        finish();
     }
+
+}
+
+
