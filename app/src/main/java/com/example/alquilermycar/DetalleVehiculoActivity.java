@@ -2,8 +2,10 @@ package com.example.alquilermycar;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -15,36 +17,104 @@ import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 public class DetalleVehiculoActivity extends AppCompatActivity {
-    private ViewPager viewPager;
-    private VehiculoPagerAdapter adapter;
+
 
     // 1. Declarar listaVehiculos (Imágenes de ejemplo)
-    private Integer[] listaVehiculos = {
+    private static Integer[] listaVehiculos = {
             R.drawable.auto1, R.drawable.auto2, R.drawable.auto3, R.drawable.auto4
     };
 
-    // Declarar las descripciones para cada vehículo
-    private String[] descripcionesVehiculos = {
-            "Marca: Ford\nModelo: Fiesta\nAño: 2019\nPrecio: $15000/día",
-            "Marca: Toyota\nModelo: Corolla\nAño: 2021\nPrecio: $18000/día",
-            "Marca: Fiat\nModelo: Cronos\nAño: 2022\nPrecio: $16000/día",
-            "Marca: Volkswagen\nModelo: Gol\nAño: 2020\nPrecio: $14000/día"
-    };
+    private ViewPager newsPager;
+    private String[] imagesDescriptions;
+    private String[] swipeDescriptions;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detalle_swipe);
+        setContentView(R.layout.swipe_imagenes);
+        String i = getIntent().getStringExtra("position");
 
-        viewPager = findViewById(R.id.viewPagerVehiculos);
+        int index = Integer.parseInt(i);
 
-        // 2. Instanciar el adaptador pasándole las listas
-        adapter = new VehiculoPagerAdapter(this, listaVehiculos, descripcionesVehiculos);
-        viewPager.setAdapter(adapter);
+        //Obtenemos la descripción de la imagen seleccionada de la lista del array.xml
+        imagesDescriptions = getResources().getStringArray(R.array.images_descriptions);
+        swipeDescriptions = getResources().getStringArray(R.array.swipe_descriptions);
 
-        // Obtener índice seleccionado del Intent anterior (la grilla)
-        int pos = getIntent().getIntExtra("posicion", 0);
-        viewPager.setCurrentItem(pos);
+        //Desde acá primero crear la clase SwipeImagePagerAdapter
+        SwipeImagePagerAdapter swipeNewsAdapter = new SwipeImagePagerAdapter();
+        newsPager = (ViewPager) findViewById(R.id.swipe_pager);
+        newsPager.setAdapter(swipeNewsAdapter);
+        newsPager.setCurrentItem(index);
+
+
+        newsPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int i, float v, int i1) {
+                VehiculosListaActivity.mSelected = i;
+            }
+            @Override
+            public void onPageSelected(int i) {
+            }
+            @Override
+            public void onPageScrollStateChanged(int i) {
+            }
+        });
+    }
+    /*Creamos SwipeImagePagerAdapter. Donde utilizaremos el layout "mostrar_imagenes" para
+    cargar la imagen original y los textos de descripción de la imagen*/
+    private class SwipeImagePagerAdapter extends PagerAdapter {
+        @Override
+        public int getCount() {
+            return VehiculosListaActivity.imagenesVehiculos.length;
+        }
+        public Object instantiateItem (ViewGroup collection, int position){
+            //LayoutInflater instancia un archive XML en sus correspondientes objetos
+            LayoutInflater inflater = (LayoutInflater)
+                    collection.getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            //Referenciamos al layout mostrar_imagenes
+            View view = inflater.inflate(R.layout.mostrar_imagenes, null);
+            //Referenciamos al objeto ImageView del layout "mostrar_imagenes"
+            ImageView imageView = (ImageView) view.findViewById(R.id.galeria_imagenes);
+            /*Asignamos a cada ImageView una imagen de nuestro "Array" de recursos, utilizamos
+            "setImageResource* ya que nuestras imágenes están almacenadas en una carpeta de recursos
+            en nuestro proyecto.
+            "Images" es un Array de enteros, ya que almacena el Id del recurso, no la imagen en si.*/
+            imageView.setImageResource(listaVehiculos[position]);
+            /*Referenciamos el objeto TextView del layout "mostrar_imagenes", para colocar la
+            descripción de la imagen.*/
+            TextView imageDescription =
+                    (TextView)view.findViewById(R.id.imagen_descripcion);
+            //Asignamos el text descriptivo de la imagen del objeto TextView
+            imageDescription.setText(imagesDescriptions[position]);
+            imageDescription.setTextColor(Color.parseColor("#FFFFFF"));
+
+            TextView swipeDescription =
+                    (TextView)view.findViewById(R.id.swipe_descripcion);
+
+            swipeDescription.setText(swipeDescriptions[position]);
+            swipeDescription.setTextColor(Color.parseColor("#FFFFFF"));
+
+
+//Adicionamos el "view" que hemos creado con los objetos ImageView y TextView a la coleccion
+            collection.addView(view,0);
+            return view;
+        } // public Object instantiateItem (ViewGroup collection, int position){
+
+        @Override
+        public void destroyItem(ViewGroup collection, int position, Object view) {
+
+            collection.removeView((View) view);
+
+        }
+
+        @Override
+        public boolean isViewFromObject(View view, Object o) {
+
+            return (view == o);
+
+        }
+
     }
 
     // Botón para iniciar el proceso de alquiler desde el detalle
@@ -52,71 +122,20 @@ public class DetalleVehiculoActivity extends AppCompatActivity {
         Intent intent = new Intent(this, AlquilerActivity.class);
 
         // Determinar qué vehículo se está viendo actualmente en la pantalla
-        int posicionActual = viewPager.getCurrentItem();
+        int posicionActual = newsPager.getCurrentItem();
         intent.putExtra("vehiculo", "Vehículo Opción " + (posicionActual + 1));
         intent.putExtra("position", posicionActual);
         startActivity(intent);
     }
 
-    // ====================================================================
-    // 3. CREAR LA CLASE VehiculoPagerAdapter AQUÍ MISMO (COMO CLASE INTERNA)
-    // ====================================================================
-    private class VehiculoPagerAdapter extends PagerAdapter {
-        private Context context;
-        private Integer[] imagenes;
-        private String[] descripciones;
-
-        public VehiculoPagerAdapter(Context context, Integer[] imagenes, String[] descripciones) {
-            this.context = context;
-            this.imagenes = imagenes;
-            this.descripciones = descripciones;
+    // modificar el botón de volver para vaciar la memoria primero
+    public void volverAtras(View view) {
+        if (newsPager != null) {
+            newsPager.setAdapter(null);
         }
-
-        @Override
-        public int getCount() {
-            return imagenes.length;
-        }
-
-        @Override
-        public boolean isViewFromObject(@NonNull View view, @NonNull Object object) {
-            return view == object; // Verifica si la vista pertenece al objeto actual
-        }
-
-        @NonNull
-        @Override
-        public Object instantiateItem(@NonNull ViewGroup container, int position) {
-            // Creamos un LinearLayout por código para organizar imagen y texto
-            LinearLayout layout = new LinearLayout(context);
-            layout.setOrientation(LinearLayout.VERTICAL);
-            layout.setGravity(Gravity.CENTER);
-
-            // Creamos el ImageView para la foto del auto
-            ImageView imageView = new ImageView(context);
-            imageView.setImageResource(imagenes[position]);
-            imageView.setLayoutParams(new LinearLayout.LayoutParams(600, 400));
-            imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-
-            // Creamos el TextView para las características
-            TextView textView = new TextView(context);
-            textView.setText(descripciones[position]);
-            textView.setTextSize(18f);
-            textView.setPadding(20, 50, 20, 20);
-            textView.setGravity(Gravity.CENTER);
-
-            // Añadimos la imagen y el texto al layout
-            layout.addView(imageView);
-            layout.addView(textView);
-
-            // Añadimos todo el conjunto al ViewPager
-            container.addView(layout);
-
-            return layout;
-        }
-
-        @Override
-        public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object object) {
-            // Se elimina la vista cuando se hace swipe y queda fuera de pantalla
-            container.removeView((View) object);
-        }
+        finish();
     }
+
 }
+
+

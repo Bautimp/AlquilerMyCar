@@ -1,4 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string-array name="images_descriptions">
+        <item>Marca: Ford\nModelo: Fiesta\nAño: 2019\nPrecio: $15000/día</item>
+        <item>Marca: Toyota\nModelo: Corolla\nAño: 2021\nPrecio: $18000/día</item>
+        <item>Marca: Fiat\nModelo: Cronos\nAño: 2022\nPrecio: $16000/día</item>
+        <item>Marca: Volkswagen\nModelo: Gol\nAño: 2020\nPrecio: $14000/día</item>
+    </string-array>
+    <string-array name="swipe_descriptions">
+        <item>Swipe 1</item>
+        <item>Swipe 2</item>
+        <item>Swipe 3</item>
+        <item>Swipe 4</item>
 
+    </string-array>
 </resources>

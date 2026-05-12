@@ -5,29 +5,31 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#121212"
-    android:padding="20dp">
+    android:padding="8dp">
 
-    <ListView
-        android:id="@+id/lv_historial"
+    <GridView
+        android:id="@+id/gridview_galeria"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:divider="#2A2A2A"
-        android:dividerHeight="1dp"
-        android:background="#1E1E1E"
-        android:padding="8dp" />
+        android:columnWidth="130dp"
+        android:numColumns="auto_fit"
+        android:horizontalSpacing="4dp"
+        android:verticalSpacing="4dp"
+        android:gravity="center"
+        android:stretchMode="columnWidth"
+        android:padding="10dp"/>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_volver_atras"
         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:layout_width="match_parent"
         android:layout_height="55dp"
-        android:layout_alignParentBottom="true"
         android:layout_marginBottom="35dp"
         android:text="← Volver"
         android:textColor="#FFFFFF"
         app:strokeColor="#FFFFFF"
         app:cornerRadius="10dp"
-        android:onClick="volverAtras" />
+        android:onClick="volverAtras"/>
 
 </LinearLayout>
