@@ -45,6 +45,15 @@ public class DetalleVehiculoActivity extends AppCompatActivity {
         // Obtener índice seleccionado del Intent anterior (la grilla)
         int pos = getIntent().getIntExtra("posicion", 0);
         viewPager.setCurrentItem(pos);
+
+
+    }
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        // Libera el adapter del ViewPager
+        viewPager.setAdapter(null);
     }
 
     // Botón para iniciar el proceso de alquiler desde el detalle
