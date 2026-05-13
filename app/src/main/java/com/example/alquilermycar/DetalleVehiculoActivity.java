@@ -139,7 +139,7 @@ public class DetalleVehiculoActivity extends AppCompatActivity {
                 swipeDescriptions = res.getStringArray(R.array.economicos_swipe_descriptions);
                 break;
 
-            case "SUV / Todo Terreno":
+            case "SUV":
                 fotosSwipe = new Integer[]{
                         R.drawable.auto1, R.drawable.auto2, R.drawable.auto3, R.drawable.auto4
                 };
@@ -147,7 +147,7 @@ public class DetalleVehiculoActivity extends AppCompatActivity {
                 swipeDescriptions = res.getStringArray(R.array.suv_swipe_descriptions);
                 break;
 
-            case "Lujo / Premium":
+            case "Premium":
                 fotosSwipe = new Integer[]{
                         R.drawable.auto1, R.drawable.auto2, R.drawable.auto3, R.drawable.auto4
                 };
@@ -155,12 +155,12 @@ public class DetalleVehiculoActivity extends AppCompatActivity {
                 swipeDescriptions = res.getStringArray(R.array.lujo_swipe_descriptions);
                 break;
 
-            case "Furgonetas / Carga":
+            case "Todoterreno":
                 fotosSwipe = new Integer[]{
                         R.drawable.auto1, R.drawable.auto2, R.drawable.auto3, R.drawable.auto4
                 };
-                imagesDescriptions = res.getStringArray(R.array.furgonetas_images_descriptions);
-                swipeDescriptions = res.getStringArray(R.array.furgonetas_swipe_descriptions);
+                imagesDescriptions = res.getStringArray(R.array.todoterreno_images_descriptions);
+                swipeDescriptions = res.getStringArray(R.array.todoterreno_swipe_descriptions);
                 break;
         }
     }

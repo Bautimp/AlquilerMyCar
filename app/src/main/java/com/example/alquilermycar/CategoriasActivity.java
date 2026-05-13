@@ -24,9 +24,9 @@ public class CategoriasActivity extends AppCompatActivity {
         // Definición de las 4 categorías requeridas
         ArrayList<String> categorias = new ArrayList<>();
         categorias.add("Económicos");
-        categorias.add("SUV / Todo Terreno");
-        categorias.add("Lujo / Premium");
-        categorias.add("Furgonetas / Carga");
+        categorias.add("SUV");
+        categorias.add("Premium");
+        categorias.add("Todoterreno");
 
         // El adaptador actúa como puente entre los datos y la vista
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this,

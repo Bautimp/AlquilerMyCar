@@ -60,19 +60,19 @@ public class VehiculosListaActivity extends AppCompatActivity {
                 };
                 break;
 
-            case "SUV / Todo Terreno":
+            case "SUV":
                 imagenesAMostrar = new Integer[]{
                         R.drawable.auto2_min, R.drawable.auto2_min, R.drawable.auto2_min, R.drawable.auto2_min
                 };
                 break;
 
-            case "Lujo / Premium":
+            case "Premium":
                 imagenesAMostrar = new Integer[]{
                         R.drawable.auto3_min, R.drawable.auto3_min, R.drawable.auto3_min, R.drawable.auto3_min
                 };
                 break;
 
-            case "Furgonetas / Carga":
+            case "Todoterreno":
                 imagenesAMostrar = new Integer[]{
                         R.drawable.auto4_min, R.drawable.auto4_min, R.drawable.auto4_min, R.drawable.auto4_min
                 };
