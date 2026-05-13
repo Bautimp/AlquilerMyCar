@@ -67,6 +67,11 @@ public class AlquilerActivity extends AppCompatActivity {
             return;
         }
 
+        if (dias > 31){
+            Toast.makeText(this, "RENTaCAR permite hasta 31 dias de alquilar sus vehiulos", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
         // Cálculo del monto total según la fórmula del TP
         double total = dias * precioPorDia;
 
