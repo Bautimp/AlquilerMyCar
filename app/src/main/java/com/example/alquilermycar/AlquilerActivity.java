@@ -18,7 +18,7 @@ public class AlquilerActivity extends AppCompatActivity {
 
     private String vehiculo;
     private int posicion;
-    private double precioPorDia = 15000.0; // Precio simulado (en un caso real se recibe por Intent)
+    private double precioPorDia = 0.0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +35,7 @@ public class AlquilerActivity extends AppCompatActivity {
         // Obtener datos del vehículo seleccionado de la pantalla anterior
         vehiculo = getIntent().getStringExtra("vehiculo");
         posicion = getIntent().getIntExtra("position", 0);
+        precioPorDia = Double.parseDouble(getIntent().getStringExtra("precio"));
         if(vehiculo == null) {
             vehiculo = "Vehículo Modelo Genérico";
         }

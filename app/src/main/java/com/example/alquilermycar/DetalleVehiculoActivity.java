@@ -26,6 +26,7 @@ public class DetalleVehiculoActivity extends AppCompatActivity {
     private ViewPager newsPager;
     private String[] imagesDescriptions;
     private String[] swipeDescriptions;
+    private String[] precios;
 
 
     @Override
@@ -120,8 +121,10 @@ public class DetalleVehiculoActivity extends AppCompatActivity {
 
         // Determinar qué vehículo se está viendo actualmente en la pantalla
         int posicionActual = newsPager.getCurrentItem();
-        intent.putExtra("vehiculo", "Vehículo Opción " + (posicionActual + 1));
+        intent.putExtra("vehiculo", imagesDescriptions[posicionActual]);
+        intent.putExtra("categoria", getIntent().getStringExtra("CATEGORIA"));
         intent.putExtra("position", posicionActual);
+        intent.putExtra("precio", precios[posicionActual]);
         startActivity(intent);
     }
 
@@ -137,6 +140,7 @@ public class DetalleVehiculoActivity extends AppCompatActivity {
                 // Usamos las variables correctas del adaptador
                 imagesDescriptions = res.getStringArray(R.array.economicos_images_descriptions);
                 swipeDescriptions = res.getStringArray(R.array.economicos_swipe_descriptions);
+                precios = res.getStringArray(R.array.economicos_precio);
                 break;
 
             case "SUV":
@@ -145,6 +149,7 @@ public class DetalleVehiculoActivity extends AppCompatActivity {
                 };
                 imagesDescriptions = res.getStringArray(R.array.suv_images_descriptions);
                 swipeDescriptions = res.getStringArray(R.array.suv_swipe_descriptions);
+                precios = res.getStringArray(R.array.suv_precio);
                 break;
 
             case "Premium":
@@ -153,6 +158,7 @@ public class DetalleVehiculoActivity extends AppCompatActivity {
                 };
                 imagesDescriptions = res.getStringArray(R.array.lujo_images_descriptions);
                 swipeDescriptions = res.getStringArray(R.array.lujo_swipe_descriptions);
+                precios = res.getStringArray(R.array.lujo_precio);
                 break;
 
             case "Todoterreno":
@@ -161,6 +167,7 @@ public class DetalleVehiculoActivity extends AppCompatActivity {
                 };
                 imagesDescriptions = res.getStringArray(R.array.todoterreno_images_descriptions);
                 swipeDescriptions = res.getStringArray(R.array.todoterreno_swipe_descriptions);
+                precios = res.getStringArray(R.array.todoterreno_precio);
                 break;
         }
     }

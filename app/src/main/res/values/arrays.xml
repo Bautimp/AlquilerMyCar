@@ -2,10 +2,17 @@
 <resources>
 
     <string-array name="economicos_images_descriptions">
-        <item>Marca: Toyota\nModelo: Etios\nAño: 2021\nPrecio: $15000/día</item>
-        <item>Marca: Fiat\nModelo: Cronos\nAño: 2022\nPrecio: $16000/día</item>
-        <item>Marca: Chevrolet\nModelo: Onix\nAño: 2020\nPrecio: $15500/día</item>
-        <item>Marca: Volkswagen\nModelo: Gol Trend\nAño: 2019\nPrecio: $14000/día</item>
+        <item>Marca: Toyota\nModelo: Etios\nAño: 2021</item>
+        <item>Marca: Fiat\nModelo: Cronos\nAño: 2022</item>
+        <item>Marca: Chevrolet\nModelo: Onix\nAño: 2020</item>
+        <item>Marca: Volkswagen\nModelo: Gol Trend\nAño: 2019</item>
+    </string-array>
+
+    <string-array name="economicos_precio">
+        <item>15000</item>
+        <item>16000</item>
+        <item>15500</item>
+        <item>14000</item>
     </string-array>
 
     <string-array name="economicos_swipe_descriptions">
@@ -16,10 +23,17 @@
     </string-array>
 
     <string-array name="suv_images_descriptions">
-        <item>Marca: Toyota\nModelo: SW4\nAño: 2023\nPrecio: $35000/día</item>
-        <item>Marca: Jeep\nModelo: Compass\nAño: 2022\nPrecio: $32000/día</item>
-        <item>Marca: Volkswagen\nModelo: Taos\nAño: 2023\nPrecio: $33000/día</item>
-        <item>Marca: Honda\nModelo: CR-V\nAño: 2021\nPrecio: $30000/día</item>
+        <item>Marca: Toyota\nModelo: SW4\nAño: 2023</item>
+        <item>Marca: Jeep\nModelo: Compass\nAño: 2022</item>
+        <item>Marca: Volkswagen\nModelo: Taos\nAño: 2023</item>
+        <item>Marca: Honda\nModelo: CR-V\nAño: 2021</item>
+    </string-array>
+
+    <string-array name="suv_precio">
+        <item>35000</item>
+        <item>32000</item>
+        <item>33000</item>
+        <item>30000</item>
     </string-array>
 
     <string-array name="suv_swipe_descriptions">
@@ -30,10 +44,17 @@
     </string-array>
 
     <string-array name="lujo_images_descriptions">
-        <item>Marca: BMW\nModelo: Serie 3\nAño: 2022\nPrecio: $48000/día</item>
-        <item>Marca: Mercedes-Benz\nModelo: Clase C\nAño: 2023\nPrecio: $50000/día</item>
-        <item>Marca: Audi\nModelo: A4\nAño: 2022\nPrecio: $45000/día</item>
-        <item>Marca: Porsche\nModelo: Macan\nAño: 2021\nPrecio: $65000/día</item>
+        <item>Marca: BMW\nModelo: Serie 3\nAño: 2022</item>
+        <item>Marca: Mercedes-Benz\nModelo: Clase C\nAño: 2023</item>
+        <item>Marca: Audi\nModelo: A4\nAño: 2022</item>
+        <item>Marca: Porsche\nModelo: Macan\nAño: 2021</item>
+    </string-array>
+
+    <string-array name="lujo_precio">
+        <item>48000</item>
+        <item>50000</item>
+        <item>45000</item>
+        <item>65000</item>
     </string-array>
 
     <string-array name="lujo_swipe_descriptions">
@@ -44,10 +65,17 @@
     </string-array>
 
     <string-array name="todoterreno_images_descriptions">
-        <item>Marca: Toyota\nModelo: Hilux 4x4\nAño: 2022\nPrecio: $30000/día</item>
-        <item>Marca: Volkswagen\nModelo: Amarok V6\nAño: 2023\nPrecio: $35000/día</item>
-        <item>Marca: Ford\nModelo: Ranger 4x4\nAño: 2023\nPrecio: $32000/día</item>
-        <item>Marca: Jeep\nModelo: Wrangler\nAño: 2021\nPrecio: $45000/día</item>
+        <item>Marca: Toyota\nModelo: Hilux 4x4\nAño: 2022</item>
+        <item>Marca: Volkswagen\nModelo: Amarok V6\nAño: 2023</item>
+        <item>Marca: Ford\nModelo: Ranger 4x4\nAño: 2023</item>
+        <item>Marca: Jeep\nModelo: Wrangler\nAño: 2021</item>
+    </string-array>
+
+    <string-array name="todoterreno_precio">
+        <item>30000</item>
+        <item>35000</item>
+        <item>32000</item>
+        <item>45000</item>
     </string-array>
 
     <string-array name="todoterreno_swipe_descriptions">
