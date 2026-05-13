@@ -5,24 +5,25 @@
 
     <ImageView
         android:id="@+id/galeria_imagenes"
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="fill_parent"
-        android:scaleType="fitXY"/>
+        android:scaleType="fitXY" />
 
     <LinearLayout
-        android:orientation="vertical"
-        android:background="@android:color/transparent"
+        android:id="@+id/linearLayout"
         android:layout_width="fill_parent"
+        android:layout_height="100dp"
         android:layout_alignParentTop="true"
-        android:layout_height="100dp">
+        android:background="@android:color/transparent"
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/swipe_descripcion"
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:textAppearance="?android:attr/textAppearanceLarge"
             android:gravity="center"
-            android:padding="10dp"/>
+            android:padding="10dp"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
     </LinearLayout>
 
     <LinearLayout

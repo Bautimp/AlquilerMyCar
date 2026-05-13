@@ -56,25 +56,25 @@ public class VehiculosListaActivity extends AppCompatActivity {
         switch (categoria) {
             case "Económicos":
                 imagenesAMostrar = new Integer[]{
-                        R.drawable.auto1_min, R.drawable.auto1_min, R.drawable.auto1_min, R.drawable.auto1_min
+                        R.drawable.auto1_min, R.drawable.auto2_min, R.drawable.auto3_min, R.drawable.auto4_min
                 };
                 break;
 
             case "SUV":
                 imagenesAMostrar = new Integer[]{
-                        R.drawable.auto2_min, R.drawable.auto2_min, R.drawable.auto2_min, R.drawable.auto2_min
+                        R.drawable.auto5_min, R.drawable.auto6_min, R.drawable.auto7_min, R.drawable.auto8_min
                 };
                 break;
 
             case "Premium":
                 imagenesAMostrar = new Integer[]{
-                        R.drawable.auto3_min, R.drawable.auto3_min, R.drawable.auto3_min, R.drawable.auto3_min
+                        R.drawable.auto9_min, R.drawable.auto10_min, R.drawable.auto11_min, R.drawable.auto12_min
                 };
                 break;
 
             case "Todoterreno":
                 imagenesAMostrar = new Integer[]{
-                        R.drawable.auto4_min, R.drawable.auto4_min, R.drawable.auto4_min, R.drawable.auto4_min
+                        R.drawable.auto13_min, R.drawable.auto14_min, R.drawable.auto15_min, R.drawable.auto16_min
                 };
                 break;
         }

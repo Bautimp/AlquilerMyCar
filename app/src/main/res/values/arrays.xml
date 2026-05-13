@@ -1,59 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <string-array name="economicos_images_descriptions">
-        <item>Marca: Ford\nModelo: Fiesta\nAño: 2019\nPrecio: $15000/día</item>
-        <item>Marca: Toyota\nModelo: Corolla\nAño: 2021\nPrecio: $18000/día</item>
+        <item>Marca: Toyota\nModelo: Etios\nAño: 2021\nPrecio: $15000/día</item>
         <item>Marca: Fiat\nModelo: Cronos\nAño: 2022\nPrecio: $16000/día</item>
-        <item>Marca: Volkswagen\nModelo: Gol\nAño: 2020\nPrecio: $14000/día</item>
+        <item>Marca: Chevrolet\nModelo: Onix\nAño: 2020\nPrecio: $15500/día</item>
+        <item>Marca: Volkswagen\nModelo: Gol Trend\nAño: 2019\nPrecio: $14000/día</item>
     </string-array>
 
     <string-array name="economicos_swipe_descriptions">
-        <item>Swipe 1 - Económico</item>
-        <item>Swipe 2 - Económico</item>
-        <item>Swipe 3 - Económico</item>
-        <item>Swipe 4 - Económico</item>
+        <item>Compacto y súper económico, ideal para moverse por la ciudad.</item>
+        <item>El sedán más elegido, excelente espacio de baúl para equipaje.</item>
+        <item>Gran tecnología interior y muy bajo consumo de combustible.</item>
+        <item>Un clásico confiable, ágil y muy fácil de estacionar.</item>
     </string-array>
 
     <string-array name="suv_images_descriptions">
         <item>Marca: Toyota\nModelo: SW4\nAño: 2023\nPrecio: $35000/día</item>
         <item>Marca: Jeep\nModelo: Compass\nAño: 2022\nPrecio: $32000/día</item>
-        <item>Marca: Ford\nModelo: Bronco\nAño: 2023\nPrecio: $38000/día</item>
+        <item>Marca: Volkswagen\nModelo: Taos\nAño: 2023\nPrecio: $33000/día</item>
         <item>Marca: Honda\nModelo: CR-V\nAño: 2021\nPrecio: $30000/día</item>
     </string-array>
 
     <string-array name="suv_swipe_descriptions">
-        <item>Swipe 1 - SUV</item>
-        <item>Swipe 2 - SUV</item>
-        <item>Swipe 3 - SUV</item>
-        <item>Swipe 4 - SUV</item>
+        <item>Máximo espacio familiar con gran robustez para viajes largos.</item>
+        <item>Diseño elegante, tecnología avanzada y gran confort interior.</item>
+        <item>SUV moderno, amplio y con los más altos estándares de seguridad.</item>
+        <item>Suavidad de marcha inigualable y confiabilidad garantizada.</item>
     </string-array>
 
     <string-array name="lujo_images_descriptions">
-        <item>Marca: Ford\nModelo: Fiesta\nAño: 2019\nPrecio: $15000/día</item>
-        <item>Marca: Toyota\nModelo: Corolla\nAño: 2021\nPrecio: $18000/día</item>
-        <item>Marca: Fiat\nModelo: Cronos\nAño: 2022\nPrecio: $16000/día</item>
-        <item>Marca: Volkswagen\nModelo: Gol\nAño: 2020\nPrecio: $14000/día</item>
+        <item>Marca: BMW\nModelo: Serie 3\nAño: 2022\nPrecio: $48000/día</item>
+        <item>Marca: Mercedes-Benz\nModelo: Clase C\nAño: 2023\nPrecio: $50000/día</item>
+        <item>Marca: Audi\nModelo: A4\nAño: 2022\nPrecio: $45000/día</item>
+        <item>Marca: Porsche\nModelo: Macan\nAño: 2021\nPrecio: $65000/día</item>
     </string-array>
 
     <string-array name="lujo_swipe_descriptions">
-        <item>Swipe 1 - lujo</item>
-        <item>Swipe 2 - lujo</item>
-        <item>Swipe 3 - lujo</item>
-        <item>Swipe 4 - lujo</item>
+        <item>Deportividad y lujo en un sedán ejecutivo perfecto y potente.</item>
+        <item>Confort supremo, tecnología de punta y máximo estatus.</item>
+        <item>Elegancia alemana con detalles premium y un andar insonorizado.</item>
+        <item>SUV de lujo con alma de auto deportivo, una experiencia única.</item>
     </string-array>
 
     <string-array name="todoterreno_images_descriptions">
-        <item>Marca: Ford\nModelo: Fiesta\nAño: 2019\nPrecio: $15000/día</item>
-        <item>Marca: Toyota\nModelo: Corolla\nAño: 2021\nPrecio: $18000/día</item>
-        <item>Marca: Fiat\nModelo: Cronos\nAño: 2022\nPrecio: $16000/día</item>
-        <item>Marca: Volkswagen\nModelo: Gol\nAño: 2020\nPrecio: $14000/día</item>
+        <item>Marca: Toyota\nModelo: Hilux 4x4\nAño: 2022\nPrecio: $30000/día</item>
+        <item>Marca: Volkswagen\nModelo: Amarok V6\nAño: 2023\nPrecio: $35000/día</item>
+        <item>Marca: Ford\nModelo: Ranger 4x4\nAño: 2023\nPrecio: $32000/día</item>
+        <item>Marca: Jeep\nModelo: Wrangler\nAño: 2021\nPrecio: $45000/día</item>
     </string-array>
 
     <string-array name="todoterreno_swipe_descriptions">
-        <item>Swipe 1 - todoterreno</item>
-        <item>Swipe 2 - todoterreno</item>
-        <item>Swipe 3 - todoterreno</item>
-        <item>Swipe 4 - todoterreno</item>
+        <item>La pick-up líder, lista para la tierra, el barro y la sierra.</item>
+        <item>Potencia extrema con el andar más cómodo tanto en ruta como en tierra.</item>
+        <item>Fuerza pura, tecnología 4x4 inteligente y gran capacidad de carga.</item>
+        <item>El ícono off-road, diseñado para superar los caminos más hostiles.</item>
     </string-array>
 
 </resources>
