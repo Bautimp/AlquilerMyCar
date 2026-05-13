@@ -141,7 +141,7 @@ public class DetalleVehiculoActivity extends AppCompatActivity {
 
             case "SUV":
                 fotosSwipe = new Integer[]{
-                        R.drawable.auto5, R.drawable.auto6, R.drawable.auto7, R.drawable.auto8
+                        R.drawable.auto9, R.drawable.auto10, R.drawable.auto11, R.drawable.auto12
                 };
                 imagesDescriptions = res.getStringArray(R.array.suv_images_descriptions);
                 swipeDescriptions = res.getStringArray(R.array.suv_swipe_descriptions);
@@ -149,7 +149,7 @@ public class DetalleVehiculoActivity extends AppCompatActivity {
 
             case "Premium":
                 fotosSwipe = new Integer[]{
-                        R.drawable.auto9, R.drawable.auto10, R.drawable.auto11, R.drawable.auto12
+                        R.drawable.auto5, R.drawable.auto6, R.drawable.auto7, R.drawable.auto8
                 };
                 imagesDescriptions = res.getStringArray(R.array.lujo_images_descriptions);
                 swipeDescriptions = res.getStringArray(R.array.lujo_swipe_descriptions);

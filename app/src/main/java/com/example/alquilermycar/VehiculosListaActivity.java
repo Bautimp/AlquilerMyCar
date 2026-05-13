@@ -62,13 +62,13 @@ public class VehiculosListaActivity extends AppCompatActivity {
 
             case "SUV":
                 imagenesAMostrar = new Integer[]{
-                        R.drawable.auto5_min, R.drawable.auto6_min, R.drawable.auto7_min, R.drawable.auto8_min
+                        R.drawable.auto9_min, R.drawable.auto10_min, R.drawable.auto11_min, R.drawable.auto12_min
                 };
                 break;
 
             case "Premium":
                 imagenesAMostrar = new Integer[]{
-                        R.drawable.auto9_min, R.drawable.auto10_min, R.drawable.auto11_min, R.drawable.auto12_min
+                        R.drawable.auto5_min, R.drawable.auto6_min, R.drawable.auto7_min, R.drawable.auto8_min
                 };
                 break;
 
