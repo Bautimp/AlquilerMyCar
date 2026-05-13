@@ -138,48 +138,37 @@ public class VehiculosListaActivity extends AppCompatActivity {
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
 
-            ImageView imageView;
-
-            if (convertView == null) {
-
-                imageView = new ImageView(mContexto);
-
-                imageView.setLayoutParams(
-                        new GridView.LayoutParams(
-                                ViewGroup.LayoutParams.MATCH_PARENT,
-                                130
-                        )
-                );
-
-                imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-
-                imageView.setCropToPadding(true);
-
-                imageView.setPadding(2,2,2,2);
-
-            } else {
-
-                imageView = (ImageView) convertView;
-
-            }
-
-            imageView.setImageResource(
-                    VehiculosListaActivity.imagenesAMostrar[position]
-            );
+            View vista = convertView;
 
             try {
+
+                if (vista == null) {
+
+                    vista = getLayoutInflater().inflate(
+                            R.layout.grid_item,
+                            parent,
+                            false
+                    );
+
+                }
+
+                ImageView imageView = vista.findViewById(R.id.imagen);
+
+                imageView.setImageResource(
+                        VehiculosListaActivity.imagenesAMostrar[position]
+                );
 
                 imageView.setTag(position);
 
                 if (position == mSelected) {
 
-                    imageView.setBackgroundColor(
+                    vista.setBackgroundColor(
                             Color.parseColor("#ff6203")
                     );
 
                 } else {
 
-                    imageView.setBackgroundColor(
+                    vista.setBackgroundColor(
                             Color.TRANSPARENT
                     );
 
@@ -191,7 +180,9 @@ public class VehiculosListaActivity extends AppCompatActivity {
 
             }
 
-            return imageView;
+            return vista;
         }
+
+
     }
 }
