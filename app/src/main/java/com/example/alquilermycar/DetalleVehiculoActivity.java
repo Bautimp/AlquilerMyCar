@@ -19,10 +19,9 @@ import androidx.viewpager.widget.ViewPager;
 public class DetalleVehiculoActivity extends AppCompatActivity {
 
 
-    // 1. Declarar listaVehiculos (Imágenes de ejemplo)
-    private static Integer[] listaVehiculos = {
-            R.drawable.auto1, R.drawable.auto2, R.drawable.auto3, R.drawable.auto4
-    };
+    // Declarar listaVehiculos
+
+    private Integer[] fotosSwipe;
 
     private ViewPager newsPager;
     private String[] imagesDescriptions;
@@ -33,13 +32,11 @@ public class DetalleVehiculoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.swipe_imagenes);
-        String i = getIntent().getStringExtra("position");
+        int index = getIntent().getIntExtra("posicion", 0);
+        String categoriaRecibida = getIntent().getStringExtra("CATEGORIA");
 
-        int index = Integer.parseInt(i);
-
-        //Obtenemos la descripción de la imagen seleccionada de la lista del array.xml
-        imagesDescriptions = getResources().getStringArray(R.array.images_descriptions);
-        swipeDescriptions = getResources().getStringArray(R.array.swipe_descriptions);
+        //Seteo de descripciones y texto del swipe con la información de array
+        filtrarVehiculosParaSwipe(categoriaRecibida);
 
         //Desde acá primero crear la clase SwipeImagePagerAdapter
         SwipeImagePagerAdapter swipeNewsAdapter = new SwipeImagePagerAdapter();
@@ -66,7 +63,7 @@ public class DetalleVehiculoActivity extends AppCompatActivity {
     private class SwipeImagePagerAdapter extends PagerAdapter {
         @Override
         public int getCount() {
-            return VehiculosListaActivity.imagenesVehiculos.length;
+            return VehiculosListaActivity.imagenesAMostrar.length;
         }
         public Object instantiateItem (ViewGroup collection, int position){
             //LayoutInflater instancia un archive XML en sus correspondientes objetos
@@ -80,7 +77,7 @@ public class DetalleVehiculoActivity extends AppCompatActivity {
             "setImageResource* ya que nuestras imágenes están almacenadas en una carpeta de recursos
             en nuestro proyecto.
             "Images" es un Array de enteros, ya que almacena el Id del recurso, no la imagen en si.*/
-            imageView.setImageResource(listaVehiculos[position]);
+            imageView.setImageResource(fotosSwipe[position]);
             /*Referenciamos el objeto TextView del layout "mostrar_imagenes", para colocar la
             descripción de la imagen.*/
             TextView imageDescription =
@@ -126,6 +123,46 @@ public class DetalleVehiculoActivity extends AppCompatActivity {
         intent.putExtra("vehiculo", "Vehículo Opción " + (posicionActual + 1));
         intent.putExtra("position", posicionActual);
         startActivity(intent);
+    }
+
+    private void filtrarVehiculosParaSwipe(String categoria) {
+        // Obtenemos los recursos de la aplicación
+        android.content.res.Resources res = getResources();
+
+        switch (categoria) {
+            case "Económicos":
+                fotosSwipe = new Integer[]{
+                        R.drawable.auto1, R.drawable.auto2, R.drawable.auto3, R.drawable.auto4
+                };
+                // Usamos las variables correctas del adaptador
+                imagesDescriptions = res.getStringArray(R.array.economicos_images_descriptions);
+                swipeDescriptions = res.getStringArray(R.array.economicos_swipe_descriptions);
+                break;
+
+            case "SUV / Todo Terreno":
+                fotosSwipe = new Integer[]{
+                        R.drawable.auto1, R.drawable.auto2, R.drawable.auto3, R.drawable.auto4
+                };
+                imagesDescriptions = res.getStringArray(R.array.suv_images_descriptions);
+                swipeDescriptions = res.getStringArray(R.array.suv_swipe_descriptions);
+                break;
+
+            case "Lujo / Premium":
+                fotosSwipe = new Integer[]{
+                        R.drawable.auto1, R.drawable.auto2, R.drawable.auto3, R.drawable.auto4
+                };
+                imagesDescriptions = res.getStringArray(R.array.lujo_images_descriptions);
+                swipeDescriptions = res.getStringArray(R.array.lujo_swipe_descriptions);
+                break;
+
+            case "Furgonetas / Carga":
+                fotosSwipe = new Integer[]{
+                        R.drawable.auto1, R.drawable.auto2, R.drawable.auto3, R.drawable.auto4
+                };
+                imagesDescriptions = res.getStringArray(R.array.furgonetas_images_descriptions);
+                swipeDescriptions = res.getStringArray(R.array.furgonetas_swipe_descriptions);
+                break;
+        }
     }
 
     // modificar el botón de volver para vaciar la memoria primero

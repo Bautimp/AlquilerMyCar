@@ -28,12 +28,12 @@ public class CategoriasActivity extends AppCompatActivity {
         categorias.add("Lujo / Premium");
         categorias.add("Furgonetas / Carga");
 
-        // El adaptador actúa como puente entre los datos y la vista [cite: 9608, 9615]
+        // El adaptador actúa como puente entre los datos y la vista
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_list_item_1, categorias);
         lvCategorias.setAdapter(adapter);
 
-        // Evento para seleccionar una categoría y pasar a la lista de vehículos [cite: 10736]
+        // Evento para seleccionar una categoría y pasar a la lista de vehículos
         lvCategorias.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

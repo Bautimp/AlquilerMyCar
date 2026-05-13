@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
@@ -16,21 +17,21 @@ public class VehiculosListaActivity extends AppCompatActivity {
 
     public static int mSelected = 0;
     private GridView gridView;
-    private String categoriaSeleccionada;
-
-    public static Integer[] imagenesVehiculos = {
-            R.drawable.auto1_min,
-            R.drawable.auto2_min,
-            R.drawable.auto3_min,
-            R.drawable.auto4_min
-    };
+    static Integer[] imagenesAMostrar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.galeria_imagenes);
+
+
+        String categoriaRecibida = getIntent().getStringExtra("CATEGORIA");
+        if (categoriaRecibida != null) {
+            setTitle("Vehículos: " + categoriaRecibida);
+        }
+
+        cargarDatosPorCategoria(categoriaRecibida);
 
         gridView = (GridView) findViewById(R.id.gridview_galeria);
 
@@ -38,12 +39,44 @@ public class VehiculosListaActivity extends AppCompatActivity {
 
         gridView.setSelection(mSelected);
 
-        categoriaSeleccionada = getIntent().getStringExtra("CATEGORIA");
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(VehiculosListaActivity.this, DetalleVehiculoActivity.class);
+                intent.putExtra("posicion", position);
+                // Pasar la categoría a para la próxima pantalla
+                intent.putExtra("CATEGORIA", categoriaRecibida);
+                startActivity(intent);
+            }
+        });
 
-        if (categoriaSeleccionada != null) {
+    }
 
-            setTitle("Vehículos: " + categoriaSeleccionada);
+    private void cargarDatosPorCategoria(String categoria) {
+        switch (categoria) {
+            case "Económicos":
+                imagenesAMostrar = new Integer[]{
+                        R.drawable.auto1_min, R.drawable.auto1_min, R.drawable.auto1_min, R.drawable.auto1_min
+                };
+                break;
 
+            case "SUV / Todo Terreno":
+                imagenesAMostrar = new Integer[]{
+                        R.drawable.auto2_min, R.drawable.auto2_min, R.drawable.auto2_min, R.drawable.auto2_min
+                };
+                break;
+
+            case "Lujo / Premium":
+                imagenesAMostrar = new Integer[]{
+                        R.drawable.auto3_min, R.drawable.auto3_min, R.drawable.auto3_min, R.drawable.auto3_min
+                };
+                break;
+
+            case "Furgonetas / Carga":
+                imagenesAMostrar = new Integer[]{
+                        R.drawable.auto4_min, R.drawable.auto4_min, R.drawable.auto4_min, R.drawable.auto4_min
+                };
+                break;
         }
     }
 
@@ -84,7 +117,7 @@ public class VehiculosListaActivity extends AppCompatActivity {
         @Override
         public int getCount() {
 
-            return imagenesVehiculos.length;
+            return imagenesAMostrar.length;
 
         }
 
@@ -131,33 +164,8 @@ public class VehiculosListaActivity extends AppCompatActivity {
             }
 
             imageView.setImageResource(
-                    VehiculosListaActivity.imagenesVehiculos[position]
+                    VehiculosListaActivity.imagenesAMostrar[position]
             );
-
-            imageView.setOnClickListener(new View.OnClickListener() {
-
-                @Override
-                public void onClick(View v) {
-
-                    mSelected = (Integer) v.getTag();
-
-                    notifyDataSetChanged();
-
-                    String index = String.valueOf(position);
-
-                    Bundle extras = new Bundle();
-
-                    extras.putString("position", index);
-
-                    Intent in = new Intent(
-                            mContexto,
-                            DetalleVehiculoActivity.class
-                    ).putExtras(extras);
-
-                    mContexto.startActivity(in);
-
-                }
-            });
 
             try {
 

@@ -1,16 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="images_descriptions">
+    <string-array name="economicos_images_descriptions">
         <item>Marca: Ford\nModelo: Fiesta\nAño: 2019\nPrecio: $15000/día</item>
         <item>Marca: Toyota\nModelo: Corolla\nAño: 2021\nPrecio: $18000/día</item>
         <item>Marca: Fiat\nModelo: Cronos\nAño: 2022\nPrecio: $16000/día</item>
         <item>Marca: Volkswagen\nModelo: Gol\nAño: 2020\nPrecio: $14000/día</item>
     </string-array>
-    <string-array name="swipe_descriptions">
-        <item>Swipe 1</item>
-        <item>Swipe 2</item>
-        <item>Swipe 3</item>
-        <item>Swipe 4</item>
 
+    <string-array name="economicos_swipe_descriptions">
+        <item>Swipe 1 - Económico</item>
+        <item>Swipe 2 - Económico</item>
+        <item>Swipe 3 - Económico</item>
+        <item>Swipe 4 - Económico</item>
     </string-array>
+
+    <string-array name="suv_images_descriptions">
+        <item>Marca: Toyota\nModelo: SW4\nAño: 2023\nPrecio: $35000/día</item>
+        <item>Marca: Jeep\nModelo: Compass\nAño: 2022\nPrecio: $32000/día</item>
+        <item>Marca: Ford\nModelo: Bronco\nAño: 2023\nPrecio: $38000/día</item>
+        <item>Marca: Honda\nModelo: CR-V\nAño: 2021\nPrecio: $30000/día</item>
+    </string-array>
+
+    <string-array name="suv_swipe_descriptions">
+        <item>Swipe 1 - SUV</item>
+        <item>Swipe 2 - SUV</item>
+        <item>Swipe 3 - SUV</item>
+        <item>Swipe 4 - SUV</item>
+    </string-array>
+
+    <string-array name="lujo_images_descriptions">
+        <item>Marca: Ford\nModelo: Fiesta\nAño: 2019\nPrecio: $15000/día</item>
+        <item>Marca: Toyota\nModelo: Corolla\nAño: 2021\nPrecio: $18000/día</item>
+        <item>Marca: Fiat\nModelo: Cronos\nAño: 2022\nPrecio: $16000/día</item>
+        <item>Marca: Volkswagen\nModelo: Gol\nAño: 2020\nPrecio: $14000/día</item>
+    </string-array>
+
+    <string-array name="lujo_swipe_descriptions">
+        <item>Swipe 1 - lujo</item>
+        <item>Swipe 2 - lujo</item>
+        <item>Swipe 3 - lujo</item>
+        <item>Swipe 4 - lujo</item>
+    </string-array>
+
+    <string-array name="furgonetas_images_descriptions">
+        <item>Marca: Ford\nModelo: Fiesta\nAño: 2019\nPrecio: $15000/día</item>
+        <item>Marca: Toyota\nModelo: Corolla\nAño: 2021\nPrecio: $18000/día</item>
+        <item>Marca: Fiat\nModelo: Cronos\nAño: 2022\nPrecio: $16000/día</item>
+        <item>Marca: Volkswagen\nModelo: Gol\nAño: 2020\nPrecio: $14000/día</item>
+    </string-array>
+
+    <string-array name="furgonetas_swipe_descriptions">
+        <item>Swipe 1 - furgonetas</item>
+        <item>Swipe 2 - furgonetas</item>
+        <item>Swipe 3 - furgonetas</item>
+        <item>Swipe 4 - furgonetas</item>
+    </string-array>
+
 </resources>
