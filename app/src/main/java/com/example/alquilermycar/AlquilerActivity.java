@@ -40,7 +40,7 @@ public class AlquilerActivity extends AppCompatActivity {
             vehiculo = "Vehículo Modelo Genérico";
         }
 
-        tvVehiculoSeleccionado.setText("Vehículo seleccionado: " + vehiculo);
+        tvVehiculoSeleccionado.setText("Vehículo seleccionado: \n" + vehiculo);
         tvPrecioDia.setText("Precio por día: $" + precioPorDia);
 
         // Configurar Spinner de Formas de Pago
