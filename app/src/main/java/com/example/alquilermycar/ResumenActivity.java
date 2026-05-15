@@ -66,6 +66,7 @@ public class ResumenActivity extends AppCompatActivity {
         if (resultado != -1) {
             Toast.makeText(this, "Alquiler Registrado", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent( this,DetalleVehiculoActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
             intent.putExtra("posicion", posicion);
 
             startActivity(intent);
@@ -77,5 +78,14 @@ public class ResumenActivity extends AppCompatActivity {
     // Método para volver a la pantalla inmediatamente anterior
     public void volverAtras(View view) {
         finish(); // Cierra la actividad actual
+    }
+
+    public void cancelarAlquiler(View view){
+        Intent intent = new Intent( this,DetalleVehiculoActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+        intent.putExtra("posicion", posicion);
+
+        startActivity(intent);
+        finish();
     }
 }
